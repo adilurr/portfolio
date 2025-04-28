@@ -83,6 +83,15 @@
             }
         }
 
+        @keyframes zoomOut {
+            from {
+                transform: scale(1.2); /* Start slightly zoomed in */
+            }
+            to {
+                transform: scale(1); /* End at normal size */
+            }
+        }
+
         header {
             position: fixed;
             top: 0;
@@ -182,7 +191,6 @@
             object-fit: cover;
             border: 5px solid white;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            animation: zoomIn 1.5s ease-in-out;
         }
 
         .hero h1 {
@@ -266,17 +274,20 @@
         }
 
         /* Sections */
-        #about, #education, #skills, #projects, #certifications, #contact {
+        #about, #education, #skills, #projects, #certifications, #contact, #download-cv {
             padding: 100px 0;
-            transition: background-color 0.3s ease; /* Added transition */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
             animation: fadeIn 1.5s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            border-radius: 8px; /* Rounded corners */
+            margin: 20px 0; /* Added margin for spacing */
         }
 
         #about, #skills, #certifications {
             background-color: var(--light);
         }
 
-        #education, #projects, #contact {
+        #education, #projects, #contact, #download-cv {
             background-color: white;
         }
 
@@ -894,7 +905,8 @@
 
         body.dark-mode #about,
         body.dark-mode #skills,
-        body.dark-mode #certifications {
+        body.dark-mode #certifications,
+        body.dark-mode #download-cv {
             background-color: var(--light); /* Match body background */
         }
 
@@ -1200,6 +1212,7 @@
                     <a href="#projects">Projects</a>
                     <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
+                    <a href="#download-cv">Download CV</a>
                 </div>
                  <div style="display: flex; align-items: center;">
                     <button class="dark-mode-toggle">🌙</button>
@@ -1233,7 +1246,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://placehold.co/300x300/4361ee/white?text=AR" alt="Adilur Rahman" onerror="this.src='https://placehold.co/300x300/eeeeee/cccccc?text=Profile+Image'">
+                    <img src="self.png" alt="Adilur Rahman" onerror="this.src='https://placehold.co/300x300/eeeeee/cccccc?text=Profile+Image'">
                 </div>
             </div>
         </div>
@@ -1275,6 +1288,17 @@
                         <div class="info-value"><a href="https://github.com/adilurr" target="_blank" rel="noopener noreferrer">github.com/adilurr</a></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download-cv">
+        <div class="container">
+            <div class="section-title">
+                <h2>Download My CV</h2>
+            </div>
+            <div style="text-align: center;">
+                <a href="Adilur_Rahman_CV.pdf" class="btn" download>Download My CV</a>
             </div>
         </div>
     </section>
@@ -1416,8 +1440,8 @@
                     </div>
                     <div class="certification-divider"></div>
                     <div class="certification-details">
-                        <h3>2023</h3>
-                        <p>Crash Course on Python</p>
+                        <h3>2024</h3>
+                        <p>Data Structures and Algorithms - Self Paced. </p>
                         <p>Issued by: GeeksforGeeks</p>
                     </div>
                 </div>
@@ -1427,20 +1451,20 @@
                     </div>
                     <div class="certification-divider"></div>
                     <div class="certification-details">
-                        <h3>2023</h3>
-                        <p>Introduction to Git and GitHub</p>
-                        <p>Issued by: Google</p>
+                        <h3>2024</h3>
+                        <p>Cloud Computing</p>
+                        <p>Issued by: NPTEL</p>
                     </div>
                 </div>
                 <div class="certification-item">
                     <div class="certification-image">
-                        <img src="images/ml_specialization.png" alt="Machine Learning Specialization" style="width:100%; border-radius:8px;">
+                        <img src="coursera.png" alt="Machine Learning Specialization" style="width:100%; border-radius:8px;">
                     </div>
                     <div class="certification-divider"></div>
                     <div class="certification-details">
                         <h3>2023</h3>
-                        <p>Machine Learning Specialization</p>
-                        <p>Issued by: Coursera / Stanford</p>
+                        <p>Python 101 : Develop Your First Python Program</p>
+                        <p>Issued by: Coursera</p>
                     </div>
                 </div>
             </div>
@@ -1646,3 +1670,4 @@
     </script>
 </body>
 </html>
+`
